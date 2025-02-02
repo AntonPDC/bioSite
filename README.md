@@ -1,2 +1,6 @@
-# bioSite
-Site designed to showcase a specific person
+<h1>CSD 340 Web Development with HTML and CSS</h1>
+<h2>Contributers:</h2>
+  <ul>
+    <li>Anton DeCesare</li>
+    <li>Nathan Braun</li>
+  </ul>
