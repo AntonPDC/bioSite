@@ -56,18 +56,17 @@ body {
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-}
-
 .hero p {
   font-size: 1.5rem;
   margin-top: 10px;
   font-weight: 500;
 }
 
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
 /* Sticky Navigation */
 nav {
   position: sticky;
@@ -206,6 +205,79 @@ footer a:hover {
   font-size: 2rem;
 }
 
+/* General Styles */
+:root {
+  --primary-color: #a78bfa; /* Soft Lavender */
+  --secondary-color: #c4b5fd; /* Light Lavender */
+  --background-color: #f3e8ff; /* Pale Lavender */
+  --accent-color: #7c3aed; /* Deep Purple */
+  --text-color: #4b0082; /* Indigo */
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.hero {
+  position: relative;
+  background: url("images/penny.jpg") no-repeat center center;
+  background-size: 65%;
+  height: 405px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Dark Overlay for Home Page */
+.home .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.hero .container {
+  max-width: 800px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Card & Grid Styles */
+.card-container,
+.highlight-container,
 .hobby-cards {
   display: flex;
   flex-wrap: wrap;
@@ -213,42 +285,65 @@ footer a:hover {
   gap: 20px;
 }
 
+.card,
+.highlight-box,
 .hobby-card {
-  flex: 0 0 auto;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 20px;
+  border: 3px solid var(--accent-color);
   background: white;
-  border: 2px solid var(--accent-color);
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s;
   text-align: center;
-  width: 250px;
-  color: var(--text-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.card:hover,
+.highlight-box:hover,
 .hobby-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-color);
 }
 
+.card img,
+.highlight-box img,
 .hobby-card img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
+  border-radius: 8px;
 }
 
-.hobby-card .card-content {
-  padding: 15px;
-  text-align: center;
-}
-
-.hobby-card .card-content h3 {
-  margin: 10px 0;
+.card h3,
+.highlight-box h3,
+.hobby-card h3 {
   font-size: 1.5rem;
-  color: var(--accent-color);
+  color: var(--text-color);
+  margin-top: 10px;
 }
 
-.hobby-card .card-content p {
-  font-size: 1rem;
+.card p,
+.highlight-box p,
+.hobby-card p {
+  font-size: 1.1rem;
   color: var(--text-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: var(--primary-color);
+  color: white;
+  margin-top: 50px;
+}
+
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
